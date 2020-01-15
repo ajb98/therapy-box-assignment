@@ -82,3 +82,10 @@ html, body, #root, #container{
   ::-ms-input-placeholder { /* Microsoft Edge */
     color: white;
   }
+
+  .dashboard-object{
+    background-image: url("./Assets/Assets/Container.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 337px 248px;
+  }

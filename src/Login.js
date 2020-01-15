@@ -1,5 +1,6 @@
 import React from 'react';
 import TitleSection from './TitleSection';
+import {InputBoxCell} from './functionLibrary';
 import './App.css';
 function LoginPage(){
 
@@ -31,18 +32,6 @@ function LoginPage(){
                 </table>
             </div>
         </div>
-    );
-}
-
-
-//  <div style={{borderRadius: '20px', width: '231px', backgroundColor: 'yellow', marginLeft: '-150px', paddingTop: '15px', paddingBottom: '15px'}}>Login</div>
-function InputBoxCell(name, id, placeholder, type, float, marginRight, marginLeft){
-    return(
-        <td style={{width: '50%'}}>
-                <div style={{float: float, marginLeft: marginLeft+"px", marginRight: marginRight +"px"}}>
-                <input type={type} name={name} id={id} placeholder={placeholder} autoComplete="off" style={{fontSize: '20px', border: 'none', borderBottom: '2px solid white', padding: '0px 5px 3px 5px', backgroundColor: 'transparent', color:  'white'}}></input>
-            </div>
-        </td> 
     );
 }
 
