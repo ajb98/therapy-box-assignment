@@ -26,13 +26,15 @@ export const TitleSection = (Title) => {
     return(
         <div style={{width: '100%', height: '150px'}}>
             <table style={{width:'100%', height: '150px'}}>
-                <tr>
-                    <td style={{verticalAlign: 'bottom', textAlign: 'center'}}>
-                        <div style={{fontSize: '64px', color: 'white'}}>
-                            {Title}
-                        </div>
-                    </td>
-                </tr>
+                <tbody>
+                    <tr>
+                        <td style={{verticalAlign: 'bottom', textAlign: 'center'}}>
+                            <div style={{fontSize: '64px', color: 'white'}}>
+                                {Title}
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
             </table>
         </div>
     );
