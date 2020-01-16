@@ -1,8 +1,9 @@
 import React from 'react';
-import {TitleSection} from './functionLibrary';
+import {TitleSection, WidgetContentTemplate} from './functionLibrary';
 import './App.css';
 
-var testing = false;
+let Parser = require('rss-parser');
+let parser = new Parser();
 
 class Dashboard extends React.Component{
 
@@ -13,6 +14,10 @@ class Dashboard extends React.Component{
         }else {
             alert("Geolocation is not supported by this browser.");
         }
+
+        getNewsRSS();
+
+        
 
         return(
             <div>
@@ -56,9 +61,16 @@ function returnWeatherHTML(weatherDetails){
     var temperature = weatherDetails['main']['temp'];
     var placeName = weatherDetails['name'];
     return '<div><div><table style="width: 100%;"><tbody><tr><td style="width: 50%;"><img style="height: 120px;" src="' + imageSrc + '"></img></td><td style="width: 50%; font-size: 22px;">' + temperature + ' Degrees</td></tr></tbody></table></div><div style="font-size: 22px;">' + placeName + '</div></div>';
-
-    
 }
+
+async function getNewsRSS(){
+    const CORS_PROXY = "https://cors-anywhere.herokuapp.com/";
+    var feed = await parser.parseURL(CORS_PROXY + 'http://feeds.bbci.co.uk/news/rss.xml');
+    console.log(feed);
+    var content = WidgetContentTemplate(feed['items'][0]['title'], feed['items'][0]['contentSnippet']);
+    document.getElementById("News").innerHTML = content;
+}
+
 
 /**
  * Function to generate the outline of a dashboard widget

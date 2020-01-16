@@ -48,4 +48,8 @@ export const InputBoxCell2 = () =>{
     );
 }
 
+export const WidgetContentTemplate = (Title, content) => {
+    return '<div style="padding: 2px 20px 2px 20px; font-size: 22px;">' + Title + '</div><div style="padding: 20px;">' + content + '</div>';
+}
+
 export default InputBoxCell;
